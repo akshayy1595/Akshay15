@@ -1,0 +1,31 @@
+class PassFail
+{
+public static void main (String[] args)
+{
+int mark=150;
+if (mark>=30 && mark<=100)
+{
+System.out.println("Pass");
+}
+
+else if (mark<0)
+{
+System.out.println("Invalid");
+}
+
+else if (mark>101)
+{
+System.out.println("mark cannot be more than 100");
+}
+
+
+else
+{
+System.out.println("Fail");
+}
+
+
+
+
+}
+}
