@@ -29,7 +29,6 @@ public class Login {
 		pass.sendKeys("1234");
 		
 		WebElement Cap=driver.findElement(By.xpath("//div[@class='col-3']"));
-//		System.out.println(Cap.getText());
 		String Captext=Cap.getText();
 		Thread.sleep(2000);
 		Captcha.sendKeys(Captext);
@@ -70,7 +69,6 @@ public class Login {
 
 		WebElement Dash=driver.findElement(By.xpath("//span[text()='Dashboard']"));
 		Dash.click();
-//		
 		WebElement togglee=driver.findElement(By.xpath("//span[@class='toggle-switch opt1']"));
 		WebElement ProfileMenuu=driver.findElement(RelativeLocator.with(By.tagName("strong")).toRightOf(togglee));
 		ProfileMenuu.click();
@@ -81,7 +79,6 @@ public class Login {
 		Thread.sleep(2000);
 		WebElement Setting=driver.findElement(By.id("setting-tab"));
 		Setting.click();
-//		ProfileMenu.click();
 		Thread.sleep(2000);
 		
 		WebElement Min=driver.findElement(By.id("MinPreparationTime"));
@@ -102,7 +99,6 @@ public class Login {
 		
 		driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
 		Thread.sleep(5000);
-//		Setting.click();
 		
 		WebElement Disclaimer=driver.findElement(By.id("disclaimer-tab"));
 		Disclaimer.click();
