@@ -1,0 +1,121 @@
+import java.awt.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
+
+public class Login {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://gernevendor.fusioninformatics.net");
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		
+		
+		
+		
+//		Login-------------
+		WebElement em=driver.findElement(By.xpath("//input[@placeholder='Enter your email id']"));
+		WebElement pass=driver.findElement(By.xpath("//input[@placeholder='Your password']"));
+		WebElement Captcha = driver.findElement(By.xpath("//input[@type='text']"));
+		WebElement submit=driver.findElement(By.xpath("//button[@type='submit']"));
+		
+		em.sendKeys("eiscafe@gmail.com");
+		pass.sendKeys("1234");
+		
+		WebElement Cap=driver.findElement(By.xpath("//div[@class='col-3']"));
+//		System.out.println(Cap.getText());
+		String Captext=Cap.getText();
+		Thread.sleep(2000);
+		Captcha.sendKeys(Captext);
+		submit.click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//button[@type='button']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[text()=' English']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("alertsDropdown")).click();
+		Thread.sleep(2000);
+		
+		WebElement toggle=driver.findElement(By.xpath("//span[@class='toggle-switch opt1']"));
+		WebElement ProfileMenu=driver.findElement(RelativeLocator.with(By.tagName("strong")).toRightOf(toggle));
+		ProfileMenu.click();
+		Thread.sleep(2000);
+		
+		WebElement Profile=driver.findElement(By.xpath("//a[@routerlink='/vendor/vendor-setting']"));
+		Profile.click();
+		Thread.sleep(2000);
+
+		WebElement Prefix=driver.findElement(By.xpath("//label[text()='Mr']"));
+		WebElement First=driver.findElement(By.id("FirstName"));
+		WebElement Last=driver.findElement(By.id("LastName"));
+		
+		Prefix.click();
+		First.clear();
+		First.sendKeys("Devid");
+		Thread.sleep(2000);
+		Last.clear();
+		Last.sendKeys("Miller");
+		Thread.sleep(2000);
+
+		WebElement Savebt=driver.findElement(By.xpath("(//button[@type='button'])[2]"));
+		Savebt.click();
+		Thread.sleep(3000);
+
+		WebElement Dash=driver.findElement(By.xpath("//span[text()='Dashboard']"));
+		Dash.click();
+//		
+		WebElement togglee=driver.findElement(By.xpath("//span[@class='toggle-switch opt1']"));
+		WebElement ProfileMenuu=driver.findElement(RelativeLocator.with(By.tagName("strong")).toRightOf(togglee));
+		ProfileMenuu.click();
+		Thread.sleep(2000);
+		
+		WebElement Profilee=driver.findElement(By.xpath("//a[@routerlink='/vendor/vendor-setting']"));
+		Profilee.click();
+		Thread.sleep(2000);
+		WebElement Setting=driver.findElement(By.id("setting-tab"));
+		Setting.click();
+//		ProfileMenu.click();
+		Thread.sleep(2000);
+		
+		WebElement Min=driver.findElement(By.id("MinPreparationTime"));
+		WebElement Max=driver.findElement(By.id("MaxPreparationTime"));
+		WebElement MinOrder=driver.findElement(By.id("MinimumOrderValue"));
+		Thread.sleep(1000);
+		Min.clear();
+		Thread.sleep(1000);
+		Min.sendKeys("25");
+		Thread.sleep(1000);
+		Max.clear();
+		Thread.sleep(1000);
+		Max.sendKeys("35");
+		Thread.sleep(1000);
+		MinOrder.clear();
+		Thread.sleep(1000);
+		MinOrder.sendKeys("2");
+		
+		driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
+		Thread.sleep(5000);
+//		Setting.click();
+		
+		WebElement Disclaimer=driver.findElement(By.id("disclaimer-tab"));
+		Disclaimer.click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("(//button[@type='button'])[4]")).click();
+		Thread.sleep(5000);
+		
+		WebElement Dashh=driver.findElement(By.xpath("//span[text()='Dashboard']"));
+		Dashh.click();
+
+		
+		
+	}
+
+}
